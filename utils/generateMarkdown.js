@@ -62,7 +62,7 @@ This project is licensed under the ${license}.`;
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.projname}
+  return (String.raw `# ${data.projname}
 
 ## Description
 
@@ -102,7 +102,7 @@ This project was written by [${data.username}](https://github.com/${data.usernam
 ---
 
 README created with [readme-generator](https://github.com/giancarlow333/readme-generator)!
-`;
+`);
 }
 
 module.exports = generateMarkdown;

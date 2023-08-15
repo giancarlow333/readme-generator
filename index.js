@@ -64,7 +64,10 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then((response) => {
         console.log(response);
-        writeToFile("testFile.md", generateMarkdown(response));
+        let results = generateMarkdown(response);
+        console.log(results);
+        writeToFile("testFile.md", results);
+        // https://stackoverflow.com/questions/50503999/split-template-string-on-line-breaks-ignoring-literal-n
     });
 }
 
