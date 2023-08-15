@@ -1,23 +1,26 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
+  const badgeStart = "[![License: " + license + "](";
+  const linkStart = "https://img.shields.io/badge/license-";
+  const linkEnd = "-blue.svg)]";
   switch (license) {
     case "GNU GPLv3":
-      break;
+      return badgeStart + linkStart + "GNU_GPL_v3" + linkEnd;
     case "GNU LGPLv3":
-      break;
+      return badgeStart + linkStart + "GNU_LGPL_v3" + linkEnd;
     case "Mozilla Public License 2.0":
-      break;
+      return badgeStart + linkStart + "Mozilla_Public_License_2.0" + linkEnd;
     case "Apache License 2.0":
-      break;
+      return badgeStart + linkStart + "Apache_License_2.0" + linkEnd;
     case "MIT License":
-      break;
+      return badgeStart + linkStart + "MIT_License" + linkEnd;
     case "Boost Software License 1.0":
-      break;
+      return badgeStart + linkStart + "Boost_Software_License_1.0" + linkEnd;
     case "The Unlicense":
-      break;
+      return badgeStart + linkStart + "The_Unlicense" + linkEnd;
     default:
-      break;
+      return "";
   }
 }
 
@@ -26,44 +29,34 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   switch (license) {
     case "GNU GPLv3":
-      break;
+      return "https://choosealicense.com/licenses/gpl-3.0/";
     case "GNU LGPLv3":
-      break;
+      return "https://choosealicense.com/licenses/lgpl-3.0/";
     case "Mozilla Public License 2.0":
-      break;
+      return "https://choosealicense.com/licenses/mpl-2.0/";
     case "Apache License 2.0":
-      break;
+      return "https://choosealicense.com/licenses/apache-2.0/";
     case "MIT License":
-      break;
+      return "https://choosealicense.com/licenses/mit/";
     case "Boost Software License 1.0":
-      break;
+      return "https://choosealicense.com/licenses/bsl-1.0/";
     case "The Unlicense":
-      break;
+      return "https://choosealicense.com/licenses/unlicense/";
     default:
-      break;
+      return "";
   }
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  switch (license) {
-    case "GNU GPLv3":
-      break;
-    case "GNU LGPLv3":
-      break;
-    case "Mozilla Public License 2.0":
-      break;
-    case "Apache License 2.0":
-      break;
-    case "MIT License":
-      break;
-    case "Boost Software License 1.0":
-      break;
-    case "The Unlicense":
-      break;
-    default:
-      break;
+  if (license == "No license") {
+    return "";
+  }
+  else {
+    return `## License
+    
+    This project is licensed under the ${license}.`;
   }
 }
 
@@ -73,6 +66,7 @@ function generateMarkdown(data) {
 
   ## Description
 
+  ${renderLicenseBadge(license)}(${renderLicenseLink(license)})
   ${data.projdesc}
 
   ## Table of Contents
@@ -85,13 +79,29 @@ function generateMarkdown(data) {
 
   ## Installation
 
+  ${data.projinstall}
+
   ## Usage
+
+  ${data.projusage}
 
   ## Contributing
 
+  ${data.projcontrib}
+
   ## Testing
 
-  ## License
+  ${data.projtest}
+
+  ${renderLicenseSection(data.license)}
+
+  ## Questions
+
+  This project was written by [${data.username}](https://github.com/${data.username}).  I can be reached via email at ${data.useremail}.
+
+  ---
+
+  README created with [readme-generator](https://github.com/giancarlow333/readme-generator)!
 `;
 }
 
