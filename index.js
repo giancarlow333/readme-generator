@@ -64,7 +64,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then((response) => {
         console.log(response);
-        writeToFile("testFile.md", generateMarkdown(response));
+        writeToFile(`./output/${response.projname}.md`, generateMarkdown(response));
     });
 }
 
