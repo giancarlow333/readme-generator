@@ -55,8 +55,8 @@ function renderLicenseSection(license) {
   }
   else {
     return `## License
-    
-    This project is licensed under the ${license}.`;
+
+This project is licensed under the ${license}.`;
   }
 }
 
@@ -64,44 +64,44 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   return `# ${data.projname}
 
-  ## Description
+## Description
 
-  ${renderLicenseBadge(data.projlicense)}(${renderLicenseLink(data.projlicense)})
-  ${data.projdesc}
+${renderLicenseBadge(data.projlicense)}(${renderLicenseLink(data.projlicense)})
+${data.projdesc}
 
-  ## Table of Contents
+## Table of Contents
 
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Contributing](#contributing)
-  - [Testing](#testing)
-  - [License](#license)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Testing](#testing)
+- [License](#license)
 
-  ## Installation
+## Installation
 
-  ${data.projinstall}
+${data.projinstall}
 
-  ## Usage
+## Usage
 
-  ${data.projusage}
+${data.projusage}
 
-  ## Contributing
+## Contributing
 
-  ${data.projcontrib}
+${data.projcontrib}
 
-  ## Testing
+## Testing
 
-  ${data.projtest}
+${data.projtest}
 
-  ${renderLicenseSection(data.projlicense)}
+${renderLicenseSection(data.projlicense)}
 
-  ## Questions
+## Questions
 
-  This project was written by [${data.username}](https://github.com/${data.username}).  I can be reached via email at ${data.useremail}.
+This project was written by [${data.username}](https://github.com/${data.username}).  I can be reached via email at ${data.useremail}.
 
-  ---
+---
 
-  README created with [readme-generator](https://github.com/giancarlow333/readme-generator)!
+README created with [readme-generator](https://github.com/giancarlow333/readme-generator)!
 `;
 }
 
