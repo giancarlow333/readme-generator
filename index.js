@@ -64,6 +64,16 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then((response) => {
         console.log(response);
+        // create output folder
+        // https://nodejs.dev/en/learn/working-with-folders-in-nodejs/
+        const folderName = 'output';
+        try {
+            if (!fs.existsSync(folderName)) {
+              fs.mkdirSync(folderName);
+            }
+        } catch (err) {
+            console.error(err);
+        }  
         writeToFile(`./output/${response.projname}.md`, generateMarkdown(response));
     });
 }
