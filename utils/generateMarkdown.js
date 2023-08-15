@@ -66,7 +66,7 @@ function generateMarkdown(data) {
 
   ## Description
 
-  ${renderLicenseBadge(license)}(${renderLicenseLink(license)})
+  ${renderLicenseBadge(data.projlicense)}(${renderLicenseLink(data.projlicense)})
   ${data.projdesc}
 
   ## Table of Contents
@@ -93,7 +93,7 @@ function generateMarkdown(data) {
 
   ${data.projtest}
 
-  ${renderLicenseSection(data.license)}
+  ${renderLicenseSection(data.projlicense)}
 
   ## Questions
 
