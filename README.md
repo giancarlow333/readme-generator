@@ -28,6 +28,12 @@ Once you have Node.js installed on your computer, please follow these steps:
 
 As noted above, run the app with the command ``node index.js``.  The typical program flow is shown a video that is available [in the assets folder](./assets/ReadmeGeneratorDemoVideo.mp4), and [on GoogleDrive](https://drive.google.com/file/d/1-BLyYOEIqYD11UyXk5SrYFPeWFgr8zD1/view?usp=drive_link).
 
+Here is a screenshot showing a terminal in which the program is running:
+
+![A terminal in which the program was invoked with the command node index.js](./assets/terminal_screenshot.png)
+
+A sample output file can be found [here](./assets/Readme%20Generator.md).
+
 ## Contributing
 
 TBD.  Currently (August 15, 2023), the generator cannot handle sections with multiple lines.  An example of the program's output is in the assets folder [here](./assets/Readme%20Generator.md); note that the sections in that readme are trimmed compared to this version, which was modified by hand.
